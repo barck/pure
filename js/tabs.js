@@ -1,6 +1,9 @@
 var link = document.querySelectorAll(".tab_link");
 
-
+for(var i = 0; i < link.length; i++){
+	var attribute = link[i].getAttribute("data-id");
+	console.log(attribute);
+}
 //  Сделай все по шагам, каждый этам заливать в гит, если на какой то этап уходит много времени - писать мне.
 //  разметку немного переделал, ее не менять.
 
