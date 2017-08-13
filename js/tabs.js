@@ -2,12 +2,11 @@ var link = document.querySelectorAll(".tab_link");
 
 for(var i = 0; i < link.length; i++){
 
-	
+
 	link[i].addEventListener("click", function(){
 		removeVisible();
 		var value = this.getAttribute("data-id");
-		var box = document.querySelector("[data-box='" + value + "']");
-		box.classList.add("visible");
+		addVisible(value);
 	}); 
 
 }
@@ -19,6 +18,10 @@ function removeVisible(){
 	}
 }
 
+function addVisible(value){
+	var box = document.querySelector("[data-box='" + value + "']");
+		box.classList.add("visible");
+}
 
 //  Сделай все по шагам, каждый этам заливать в гит, 
 //  если на какой то этап уходит много времени - писать мне.
