@@ -5,12 +5,12 @@ for(var i = 0; i < link.length; i++){
 	link[i].addEventListener("click", function(){
 
 		var value = this.getAttribute("data-id");
-		console.log(value);
-		return value;
-
+		var box = document.querySelector("[data-box='" + value + "']");
+		box.classList.add("visible");
 	}); 
 
 }
+
 
 
 //  Сделай все по шагам, каждый этам заливать в гит, 
