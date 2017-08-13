@@ -5,7 +5,7 @@ for(var i = 0; i < link.length; i++){
 	var attribute = link[i].getAttribute("data-id");
 	console.log(attribute);
 	console.log(link[i]);
-	link[i].onclick = function(){alert(link[i])}; //почему здесь link[i]  уже undefined?
+	link[i].addEventListener("click", function(){alert(link[i])}); //почему здесь link[i]  уже undefined?
 }
 //  Сделай все по шагам, каждый этам заливать в гит, если на какой то этап уходит много времени - писать мне.
 //  разметку немного переделал, ее не менять.
