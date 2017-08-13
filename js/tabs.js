@@ -2,8 +2,9 @@ var link = document.querySelectorAll(".tab_link");
 
 for(var i = 0; i < link.length; i++){
 
+	
 	link[i].addEventListener("click", function(){
-
+		removeVisible();
 		var value = this.getAttribute("data-id");
 		var box = document.querySelector("[data-box='" + value + "']");
 		box.classList.add("visible");
@@ -11,6 +12,12 @@ for(var i = 0; i < link.length; i++){
 
 }
 
+function removeVisible(){
+	var boxes = document.querySelectorAll(".tab");
+	for (var j = 0; j < boxes.length; j++){
+		boxes[j].classList.remove("visible");
+	}
+}
 
 
 //  Сделай все по шагам, каждый этам заливать в гит, 
