@@ -3,10 +3,17 @@ var link = document.querySelectorAll(".tab_link");
 for(var i = 0; i < link.length; i++){
 
 	var attribute = link[i].getAttribute("data-id");
-	console.log(attribute);
-	console.log(link[i]);
-	link[i].addEventListener("click", function(){alert(link[i])}); //почему здесь link[i]  уже undefined?
+
+	link[i].addEventListener("click", function(){
+
+		var value = this.getAttribute("data-id");
+		console.log(value);
+		
+	}); 
+
 }
+
+
 //  Сделай все по шагам, каждый этам заливать в гит, если на какой то этап уходит много времени - писать мне.
 //  разметку немного переделал, ее не менять.
 
