@@ -1,0 +1,26 @@
+{
+  "name": "pure",
+  "version": "1.0.0",
+  "description": "Pure, slider, tabs",
+  "main": "index.js",
+  "dependencies": {
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-twig-render": "^1.8.1",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barck94/pure/issues"
+  },
+  "homepage": "https://github.com/barck94/pure#readme"
+}
