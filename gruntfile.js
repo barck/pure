@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                             paths: paths
 
                         },
-                        template: "app/views/layout.twig",
+                        template: "app/views/index.twig",
                         dest: "public/index.html"
                     }
                 ]}
@@ -58,10 +58,29 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     // makes all src relative to cwd
-                    {expand: true, cwd: 'app/', src: ['img/*'], dest: 'public'},
-                ],
-            },
+                    {expand: true, cwd: 'app/', src: ['img/*'], dest: 'public'}
+                ]
+            }
         },
+        watch: {
+            files: 'app/style/**/*.styl',
+            tasks: ['stylus']
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src: [
+                        'public/css/*.css'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: 'public'
+                },
+            }
+
+        }
+
     });
 
     // Загрузка плагинов, установленных с помощью npm install
@@ -71,8 +90,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
 
 
     // Задача по умолчанию
-    grunt.registerTask('default', ['clean','concat', 'uglify', 'twigRender', 'stylus', 'copy']);
+    grunt.registerTask('default', ['clean','concat', 'uglify', 'twigRender', 'stylus', 'copy', 'browserSync', 'watch']);
 };
